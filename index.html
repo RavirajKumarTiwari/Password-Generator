@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Manager</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <div class="container">
+        <h1>Password Generator</h1>
+        <div class="display-container">
+            <input type="text" readonly placeholder="Password" class="display" data-PasswordDisplay> <!-- custom attribute -->
+            
+            <!-- For Coppy Button -->
+            <button>
+                <span data-copyMsg>
+                    <img src="#" alt="cpy" srcset="">
+                </span>
+            </button>
+
+        </div>
+
+        <!-- For Input Field -->
+        <div class="input-container">
+            <div class="length-container">
+                <p>Password Length</p>
+                <p data-lengthName>0</p>
+                <input type="range" min="1" max="20" class="slider" step="i" data-lengthSlider>
+            </div>
+
+            <!-- For Checkbox -->
+            <div>
+                <input type="checkbox" id="uppercase">
+                <label for="uppercase">includes uppercase latters</label>
+
+                <input type="checkbox" id="lowercase">
+                <label for="uppercase">includes lowercase latters</label>
+
+                <input type="checkbox" id="number">
+                <label for="uppercase">includes number latters</label>
+                
+                <input type="checkbox" id="symbol">
+                <label for="uppercase">includes symbol latters</label>
+            </div>
+
+            <div class="strength-container">
+                <p>strength</p>
+                <div data-indicator for strength of your password></div>
+            </div>
+
+            <button class="generateButton">Generator Password</button>
+
+        </div>
+    </div>
+
+
+</body>
+</html>
