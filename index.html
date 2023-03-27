@@ -12,13 +12,12 @@
     <div class="container">
         <h1>Password Generator</h1>
         <div class="display-container">
-            <input type="text" readonly placeholder="Password" class="display" data-passwordDisplay> <!-- custom attribute -->
+            <input readonly placeholder="Password" class="display" data-passwordDisplay> <!-- custom attribute -->
             
             <!-- For Coppy Button -->
-            <button>
-                <span data-copyMsg>
-                    <img src="#" alt="cpy" srcset="">
-                </span>
+            <button data-copy>
+                <span data-copyMsg></span>
+                <img src="./assets/copy.svg" alt="cpy" width="23" height="23">
             </button>
 
         </div>
@@ -28,29 +27,40 @@
             <div class="length-container">
                 <p>Password Length</p>
                 <p data-lengthNumber>0</p>
-                <input type="range" min="1" max="20" class="slider" step="i" data-lengthSlider>
             </div>
+
+            <!-- slider -->
+            <input type="range" min="1" max="20" class="slider" step="1" data-lengthSlider>
 
             <!-- For Checkbox -->
             <div>
                 <input type="checkbox" id="uppercase">
-                <label for="uppercase">includes uppercase latters</label>
-
-                <input type="checkbox" id="lowercase">
-                <label for="uppercase">includes lowercase latters</label>
-
-                <input type="checkbox" id="number">
-                <label for="uppercase">includes number latters</label>
-                
-                <input type="checkbox" id="symbol">
-                <label for="uppercase">includes symbol latters</label>
+                <label for="uppercase">Includes Uppercase latters</label>
             </div>
 
+            <div>
+                <input type="checkbox" id="lowercase">
+                <label for="uppercase">Includes Lowercase latters</label>
+            </div>
+
+            <div>
+                <input type="checkbox" id="numbers">
+                <label for="uppercase">Includes Number latters</label>
+            </div>
+            
+            <div>
+                <input type="checkbox" id="symbols">
+                <label for="uppercase">Includes Symbol latters</label>
+            </div>
+
+            <!-- For Strength -->
             <div class="strength-container">
                 <p>strength</p>
-                <div data-indicator for strength of your password></div>
+                <div data-indicator></div>
             </div>
 
+
+            <!-- For Generate Button -->
             <button class="generateButton">Generator Password</button>
 
         </div>
