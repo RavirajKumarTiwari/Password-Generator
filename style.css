@@ -7,7 +7,7 @@
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
-:root{
+:root {
     --dk-violet: #5e2a84;
     --lt-voilet: #a389d4;
     --lt-voilet2: #d3cbe8;
@@ -24,7 +24,7 @@
     --dk-text: #333333;
 }
 
-body{
+body {
     width: 100vw;
     height: 100vh;
     display: flex;
@@ -34,12 +34,12 @@ body{
     background: linear-gradient(90deg, rgba(31, 17, 206, 1) 0%, rgba(229, 43, 43, 1) 100%);
 }
 
-.container{
-    width: 450px;
-    max-height: 450px;
+.container {
+    width: auto;
+    max-height: 100%;
 }
 
-h1{
+h1 {
     /* font-size: 3rem; */
     color: var(--pl-white);
     opacity: 0.75;
@@ -50,15 +50,15 @@ h1{
     line-height: 1.2;
 }
 
-.display-container{
+.display-container {
     position: relative;
     background-color: var(--dk-violet);
     border-radius: 1rem;
     border-bottom: 0.35rem solid var(--lt-voilet2);
-    
+
 }
 
-.display{
+.display {
     width: 100%;
     background-color: transparent;
     padding: 1.5rem 1rem;
@@ -71,7 +71,7 @@ h1{
     border: none;
 }
 
-.display::placeholder{
+.display::placeholder {
     position: absolute;
     top: 50%;
     left: 1.5rem;
@@ -82,7 +82,7 @@ h1{
     text-transform: uppercase
 }
 
-.display-container button{
+.display-container button {
     position: absolute;
     top: 50%;
     right: 1.5rem;
@@ -92,7 +92,7 @@ h1{
     cursor: pointer;
 }
 
-.input-container{
+.input-container {
     width: 100%;
     background-color: var(--dk-violet);
     border-radius: 1rem;
@@ -101,24 +101,24 @@ h1{
     border-bottom: 0.35rem solid var(--lt-voilet2);
 }
 
-.length-container{
+.length-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 0.5rem;
 }
 
-.length-container p:nth-child(1){
+.length-container p:nth-child(1) {
     color: var(--pl-white);
     font-size: 1.5rem;
 }
 
-.length-container p:nth-child(2){
+.length-container p:nth-child(2) {
     color: var(--vb-yellow);
     font-size: 1.5rem;
 }
 
-.strength-container{
+.strength-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -126,18 +126,18 @@ h1{
     margin-bottom: 2rem;
 }
 
-.strength-container p{
+.strength-container p {
     color: var(--pl-white);
     font-size: 1.5rem;
 }
 
-.indicator{
+.indicator {
     width: 1.5rem;
     height: 1.5rem;
     border-radius: 50%;
 }
 
-.generateButton{
+.generateButton {
     width: 100%;
     background-color: var(--vb-cyan);
     padding: 1.5rem;
@@ -153,20 +153,20 @@ h1{
     transition: all 0.3s ease-in-out;
 }
 
-.generateButton:hover{
+.generateButton:hover {
     background-color: var(--vb-cyan2);
     color: var(--dk-violet);
     border-bottom: 0rem;
 }
 
-.check{
+.check {
     display: flex;
     align-items: center;
     margin: 1rem 0;
     gap: 0 1rem;
 }
 
-.check input{
+.check input {
     appearance: none;
     width: 20px;
     height: 20px;
@@ -174,4 +174,106 @@ h1{
     border: 1.5px solid var(--vb-cyan);
     cursor: pointer;
     position: relative;
+}
+
+.check input:checked {
+    background-color: var(--vb-cyan);
+}
+
+.check input:checked::before {
+    content: '✓';
+    position: absolute;
+    color: var(--dk-text);
+    font-size: 1.25rem;
+    font-weight: 600;
+    left: 50%;
+    top: -3.5px;
+    transform: translateX(-40%);
+}
+
+.check label {
+    color: var(--pl-white);
+    font-size: 1.02rem;
+    letter-spacing: 0.75px;
+}
+
+.slider {
+    appearance: none;
+    width: 100%;
+    height: 0.75rem;
+    cursor: pointer;
+    background-color: var(--lt-voilet);
+    border-radius: 1rem;
+    background-image: linear-gradient(var(--vb-cyan2), var(--dk-violet));
+    background-repeat: no-repeat;
+    border: none;
+    outline: none;
+    z-index: -1;
+}
+
+/* Not works in firefox */
+.slider::-webkit-slider-thumb {
+    appearance: none;
+    z-index: 1;
+    position: relative;
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+    background-color: var(--vb-yellow);
+    cursor: pointer;
+    border: 1.5px solid var(--vb-yellow);
+    box-shadow: 0 0 12px 1px var(--vb-yellow);
+    transition: all 100ms ease-in;
+}
+
+/* For firefox */
+.slider::-moz-range-thumb {
+    appearance: none;
+    position: relative;
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+    background-color: var(--vb-yellow);
+    cursor: pointer;
+    border: 1.5px solid var(--vb-yellow);
+    box-shadow: 0 0 12px 1px var(--vb-yellow);
+    transition: all 100ms ease-in;
+}
+
+.slider:focus {
+    outline: 3px solid var(--vb-yellow);
+}
+
+/* Not for firefox */
+.slider::-webkit-slider-thumb:hover {
+    outline: 2px solid var(--vb-yellow);
+    background-color: var(--dk-violet);
+    box-shadow: 0px 0px 12px 2px var(--vb-yellow);
+}
+
+/* for firefox */
+.slider::-moz-range-thumb:hover {
+    outline: 2px solid var(--vb-yellow);
+    background-color: var(--dk-violet);
+    box-shadow: 0px 0px 12px 2px var(--vb-yellow);
+}
+
+.toolTip {
+    position: absolute;
+    color: var(--dk-violet);
+    background-color: var(--vb-yellow);
+    font-size: 1.25rem;
+    bottom: 80%;
+    left: 10%;
+    padding: 5px 10px;
+    border-radius: 0.7rem;
+    opacity: 0;
+    transform: scale(0);
+    transform-origin: bottom;
+    transition: all 250ms ease-in-out;
+}
+
+.toolTip.active {
+    opacity: 1;
+    transform: scale(1);
 }
