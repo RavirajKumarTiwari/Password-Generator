@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Password Manager</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@300&display=swap" rel="stylesheet">
 </head>
 <body>
     
@@ -33,22 +36,22 @@
             <input type="range" min="1" max="20" class="slider" step="1" data-lengthSlider>
 
             <!-- For Checkbox -->
-            <div>
+            <div class="check">
                 <input type="checkbox" id="uppercase">
                 <label for="uppercase">Includes Uppercase latters</label>
             </div>
 
-            <div>
+            <div class="check">
                 <input type="checkbox" id="lowercase">
                 <label for="uppercase">Includes Lowercase latters</label>
             </div>
 
-            <div>
+            <div class="check">
                 <input type="checkbox" id="numbers">
                 <label for="uppercase">Includes Number latters</label>
             </div>
             
-            <div>
+            <div class="check">
                 <input type="checkbox" id="symbols">
                 <label for="uppercase">Includes Symbol latters</label>
             </div>
@@ -56,7 +59,7 @@
             <!-- For Strength -->
             <div class="strength-container">
                 <p>strength</p>
-                <div data-indicator></div>
+                <div class="indicator" data-indicator></div>
             </div>
 
 
